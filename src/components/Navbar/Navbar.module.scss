@@ -1,0 +1,20 @@
+
+.container {
+    padding: 20px;
+    padding-left: 50px;
+    border-bottom: 1px #3333 solid;
+    margin: 20px 0;
+    margin-top: 0px;
+}
+
+.title {
+    text-decoration: none;
+
+    h1 {
+        color: #3333;
+    }
+
+    h1:hover {
+        color: orange;
+    }
+}
