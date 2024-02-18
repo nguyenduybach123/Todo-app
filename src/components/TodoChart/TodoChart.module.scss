@@ -1,0 +1,21 @@
+.container{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.info-card-wrap{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.chart-wrap{
+    width: 400px;
+    height: 450px;
+    padding: 5px;
+}

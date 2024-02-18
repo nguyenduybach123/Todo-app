@@ -1,38 +1,32 @@
-import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
-import TodoCard from "../../components/TodoCard";
+
+// Import
 import styles from './Home.module.scss'
+import useTodosContext from "../../hooks/useTodosContext";
+import TodoHome from "../../components/TodoHome";
+import TodoForm from "../../components/TodoForm";
+import TodoSearch from "../../components/TodoSearch";
+
+
+
 
 const cx = classNames.bind(styles);
 
 function Home () {
 
-    const [todos,setTodos] = useState([]);
-
-    useEffect(() => {
-        const fetchTodos = async () => {
-            const response = await fetch('/api/todos');
-            const json = await response.json();
-
-            if(response.ok) {
-                setTodos(json);
-            }
-
-        }
-
-        fetchTodos();
-
-    },[])
+    const { display } = useTodosContext();
 
     return (
-        <div>
-            <div className={cx('todoList')}>
-                {
-                    todos && todos.map((todo) => (
-                        <TodoCard key={todo._id} title={todo.title} content={todo.content}></TodoCard>
-                    ))
-                }
-            </div>
+        <div className={cx('container')}>
+            {
+                (display === 'todo-home') ? 
+                    <TodoHome></TodoHome> :
+                (display === 'todo-form') ? 
+                    <TodoForm></TodoForm> :
+                (display === 'todo-search') ?
+                    <TodoSearch></TodoSearch> :
+                    <TodoHome></TodoHome>
+            }
         </div>
     );
 }

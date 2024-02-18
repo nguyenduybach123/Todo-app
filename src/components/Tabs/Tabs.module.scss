@@ -1,0 +1,43 @@
+.container{
+    width: 100%;
+    position: relative;
+}
+
+.tab-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+    .tab-item{
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            transition: none;
+        }
+
+    }
+
+    .tab-item.active p {
+        color: dodgerblue;
+    }
+
+
+    .tab-item:hover p {
+        color: dodgerblue;
+    }
+    
+}
+
+.select-bar{
+    height: 3px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: blue;
+}           

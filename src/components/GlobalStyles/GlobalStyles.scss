@@ -4,4 +4,14 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
+    transition: all .2s;
+    z-index: 0;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6699ff;
 }

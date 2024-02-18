@@ -1,45 +1,94 @@
 
 .container {
+    width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     padding: 5px;
     border-radius: 10px;
     margin: 20px 0;
-    width: 300px;
     border: 1px black solid;
     box-shadow: 5px 5px black;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 100;
 }
 
-.menuBar{
-    
-    cursor: pointer;
-    align-self: flex-end;
+.setting-wrapper {
+    display: none;
+    width: calc(100% + 35px);
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+/*.setting-wrapper:hover .setting {
+    display: none;
+}*/
+
+.setting {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+}
+
+.setting:active {
+    color: white;
+}
+
+.menu-bar{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -15px;
+    right: -90px;
     margin: 5px;
+    z-index: 1000 !important;
 
     svg {
         height: 16px;
         width: 16px;
     }
 
-    :hover {
-        color: aqua;
+    .menu-item {
+        margin: 2px 0;
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        padding: 2px;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .menu-item:hover {
+        background-color: #cccc;
     }
 
 }
 
-.todoHeader {
+.menu-bar.active {
+    display: block;
+}
+
+.cardHeader {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    border: 1px black solid;
     border-radius: 10px;
 
     .title {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 700;
-        margin-right: 50px;
     }
 
 
@@ -62,10 +111,115 @@
 
     }
 
+    .expand {
+        margin-top: 3px;
+        cursor: pointer;
+    }
+
+    .expand.active {
+        animation: rotateExpand 0.3s linear forwards 1;
+    }
+
+    .expand.disactive {
+        animation: rotateDisExpand 0.3s linear forwards 1;
+    }
+
+
+
+    @keyframes rotateExpand {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(180deg);
+        }
+    }
+
+    @keyframes rotateDisExpand {
+        0% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+    }
+
 }
 
 .content {
-    font-size: 16px;
-    padding: 10px;
+    margin-bottom: 5px;
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        color: gray;
+    }
 }
+
+.content.active {
+    margin-bottom: 5px;
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        color: gray;
+        word-wrap: break-word;
+    }
+}
+
+.duration {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .create-time {
+        font-size: 14px;
+        color: gray;
+    }
+
+}
+
+.complete {
+    height: 100%;
+    
+    button {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background-color: orange;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: coral;
+    }
+}
+
+.cardContent {
+    width: 100%;
+    padding: 0px 10px 10px 10px;
+    transition: all 0.2s;
+}
+
+.cardContent.active {
+    transition: all .2s;
+}
+
+.cardContent:active {
+    transition: all 0.3s;
+}
+
+.check-complete {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(0%, -50%);
+    border-radius: 5px;
+}
+
+
 

@@ -1,0 +1,41 @@
+.container{
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-back-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content-search{
+    width: 100%;
+    flex: 1;
+
+    .input-search {
+        width: 100%;
+        padding: 8px;
+        margin-left: 10px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+.btn-reset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

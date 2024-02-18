@@ -1,0 +1,43 @@
+.container{
+    padding: 5px;
+}
+
+.todo-search-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-search-wrap{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        cursor: pointer;
+        transition: none;
+    }
+
+    svg:hover {
+        color: orange;
+    }
+
+    .btn-back {
+        transform: rotate(90deg);
+    }
+
+    .input-search {
+        flex: 1;
+    }
+
+}
+
+.content-search-wrap{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
